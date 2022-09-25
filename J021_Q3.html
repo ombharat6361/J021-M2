@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Counter</title>
+        <script>
+        	window.onload = (event) => {
+        		var num = 0;
+        		var prntnum = document.getElementById("num");
+        		document.getElementById("inc").addEventListener("click", () => { num++; prntnum.innerHTML = num;}); 
+        		document.getElementById("dec").addEventListener("click", () => { if (num > 0) { num--; prntnum.innerHTML = num;}});
+        	};
+        </script>
+        <style>
+        	body {
+        		text-align: center;
+        	}
+        </style>
+</head>
+<body>
+            <h1 id="cntr">Counter: </h1>
+            <h1 id="num">0</h1>
+            <button id="inc" type="button">++</button>
+            <button id="dec" type="button">--</button>
+</body>
+</html>
