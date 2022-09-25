@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Addition</title>
+        <script>
+            function add() {
+                var a = document.getElementById("a");
+                var b = document.getElementById("b");
+                var c = document.getElementById("c");
+                
+                c.value = parseInt(a.value) + parseInt(b.value);
+            }
+        </script>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="number" required id="a">
+        <input type="number" required id="b">
+        <button onclick="add()">Add</button>
+        <input type=number readonly id="c">
+    </body>
+</html>

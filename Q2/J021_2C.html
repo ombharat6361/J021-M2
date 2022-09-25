@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>nice</title>
+		<script>
+			window.onload = (event) => {
+  				document.getElementById("b0").addEventListener("click", (e) => {
+  					if (parseInt(document.getElementById("inp0").value) % 2 == 0)
+  						document.getElementById("p0").innerHTML = "even";
+  					else document.getElementById("p0").innerHTML = "odd";
+				});
+				
+  				document.getElementById("b1").addEventListener("click", (e) => {
+  					var ch = document.getElementById("inp1").value;
+  					p1 = document.getElementById("p1");
+  					switch (ch) {
+  						case 'A': p1.innerHTML = "great"; break;
+  						case 'B': p1.innerHTML = "nice"; break;
+  						case 'C': p1.innerHTML = "ok"; break;
+  						case 'D': p1.innerHTML = "disappointing"; break;
+  						case 'E': p1.innerHTML = "sad"; break;
+  						default: p1.innerHTML = "default case";
+  					}
+				});
+		
+  				document.getElementById("b3").addEventListener("click", (e) => {
+					var dict = { foo: 0, bar: 1 };
+					str = "";
+					for (let x in dict) {
+						str += x + " has value " + dict[x] + " | ";
+					}
+					document.getElementById("p3").innerHTML = str;
+				});
+				
+  				document.getElementById("b4").addEventListener("click", (e) => {
+					var arr = ["apple", "banana", "cherry"];
+					str = "";
+					for (let x of arr) {
+						str += x + " ";
+					}
+					document.getElementById("p4").innerHTML = str;
+				});				
+			};
+		</script>
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<p>if-else</p>
+		<input type="number" id="inp0">
+		<button id="b0">Test</button>
+		<p id="p0"></p>
+		
+		<p>switch: enter a grade (upper case): </p>
+		<input type="text" id="inp1">
+		<button id="b1">Test</button>
+		<p id="p1"></p>
+		
+		<p>simple for loop: </p>
+		<p>we iterate from 1 to 10 and multiple the given number to produce this table</p>
+		<input type="number" id="inp2">
+		<button id="b2">Test</button>
+		<p id="p2"></p>
+		
+		<p>for in loop</p>
+		<p>iterating through properties of an object. consider this dict: { foo: 0, bar: 1 }. to iterate through the properties and print: </p>
+		<button id="b3">Test</button>
+		<p id="p3"></p>
+		
+		<p>for of loop</p>
+		<p>iterating through elements of an object. consider this array: ["apple", "banana", "cherry"]. to iterate through the elements and print: </p>
+		<button id="b4">Test</button>
+		<p id="p4"></p>
+	</body>
+</html>
