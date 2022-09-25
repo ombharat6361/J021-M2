@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<h1>Tasks page</h1>
+
+<div class="task-container">
+    <div>
+        <h3>{{task.name}}</h3>
+        <p>{{task.description}}</p>
+
+    </div>
+    <div>
+        <a href="{% url 'delete-task' task.id %}">Delete</a>
+        <a href="{% url 'update-task' task.id %}">Edit</a>
+        <small>@{{task.user}} {{task.created}}</small>
+
+        <hr>
+ 
+    </div>
+
+</div>
+{% endblock %}

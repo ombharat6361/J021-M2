@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Home Page</h1>
+
+<div>
+    <a href="{% url 'create-task' %}">Create a task</a>
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if tasks %}
+{% for task in tasks %}
+    <div>
+    <a href="{% url 'tasks' task.id %}"><h4>{{task.name}}</h4></a>
+    </div>
+{% endfor %}
+{% endif %}
+{% endblock %}
